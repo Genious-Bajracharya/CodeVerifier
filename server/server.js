@@ -9,8 +9,14 @@ app.use(express.json());
 app.use(
   cors({
     origin: "https://code-verifier.vercel.app",
+    methods: ["GET", "POST", "OPTIONS"],
+    allowedHeaders: ["Content-Type"],
   })
 );
+
+app.get("/", (req, res) => {
+  res.send("working");
+});
 
 app.post("/api/verify", (req, res) => {
   const { code } = req.body;
