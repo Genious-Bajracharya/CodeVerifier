@@ -18,7 +18,7 @@ export default function Home(){
           const verificationCode =code;
           console.log(code)
     
-          const response = await axios.post("http://localhost:5000/api/verify", {
+          const response = await axios.post("https://code-verifier-server.vercel.app/api/verify", {
             code: verificationCode,
           });
     
