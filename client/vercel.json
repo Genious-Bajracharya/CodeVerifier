@@ -4,6 +4,8 @@
     { "src": "package.json", "use": "@vercel/static-build" }
   ],
   "routes": [
+    { "src": "/(.*).js", "headers": { "Content-Type": "application/javascript" } },
     { "src": "/(.*)", "dest": "/" }
   ]
 }
+
